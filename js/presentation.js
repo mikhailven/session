@@ -122,3 +122,95 @@ document.addEventListener('mouseup', () => { dragging = null; });
 document.addEventListener('touchend', () => { dragging = null; });
 
 update();
+
+// === Slide 4: Radar Charts ===
+const radarLabels = ['Восхищение', 'Желанность', 'Свобода', 'Вовлечённость'];
+const radarData = {
+    anya: [4, 9, 4, 8],
+    natasha: [7, 9, 6, 6]
+};
+
+function drawRadar(canvasId, values, color) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width;
+    const h = canvas.height;
+    const cx = w / 2;
+    const cy = h / 2;
+    const r = Math.min(cx, cy) - 40;
+    const n = radarLabels.length;
+
+    ctx.clearRect(0, 0, w, h);
+
+    for (let level = 2; level <= 10; level += 2) {
+        ctx.beginPath();
+        for (let i = 0; i <= n; i++) {
+            const angle = (Math.PI * 2 / n) * i - Math.PI / 2;
+            const x = cx + Math.cos(angle) * (r * level / 10);
+            const y = cy + Math.sin(angle) * (r * level / 10);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = 'rgba(124, 58, 237, 0.1)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+    }
+
+    for (let i = 0; i < n; i++) {
+        const angle = (Math.PI * 2 / n) * i - Math.PI / 2;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(cx + Math.cos(angle) * r, cy + Math.sin(angle) * r);
+        ctx.strokeStyle = 'rgba(124, 58, 237, 0.15)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+    }
+
+    ctx.font = '13px Segoe UI, system-ui, sans-serif';
+    ctx.fillStyle = '#5a3d7a';
+    for (let i = 0; i < n; i++) {
+        const angle = (Math.PI * 2 / n) * i - Math.PI / 2;
+        const lx = cx + Math.cos(angle) * (r + 28);
+        const ly = cy + Math.sin(angle) * (r + 28);
+        if (i === 0) { ctx.textAlign = 'center'; ctx.fillText(radarLabels[i], lx, ly - 4); }
+        else if (i === 1) { ctx.textAlign = 'left'; ctx.fillText(radarLabels[i], lx + 4, ly + 5); }
+        else if (i === 2) { ctx.textAlign = 'center'; ctx.fillText(radarLabels[i], lx, ly + 16); }
+        else { ctx.textAlign = 'right'; ctx.fillText(radarLabels[i], lx - 4, ly + 5); }
+    }
+
+    ctx.beginPath();
+    for (let i = 0; i <= n; i++) {
+        const idx = i % n;
+        const angle = (Math.PI * 2 / n) * idx - Math.PI / 2;
+        const val = values[idx] / 10;
+        const x = cx + Math.cos(angle) * r * val;
+        const y = cy + Math.sin(angle) * r * val;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = color + '33';
+    ctx.fill();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    ctx.font = 'bold 16px Segoe UI, system-ui, sans-serif';
+    for (let i = 0; i < n; i++) {
+        const angle = (Math.PI * 2 / n) * i - Math.PI / 2;
+        const val = values[i] / 10;
+        const x = cx + Math.cos(angle) * r * val;
+        const y = cy + Math.sin(angle) * r * val;
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.fillStyle = '#3a2060';
+        ctx.fillText(values[i], x, y - 12);
+    }
+}
+
+drawRadar('radarAnya', radarData.anya, '#7c3aed');
+drawRadar('radarNatasha', radarData.natasha, '#22c55e');
