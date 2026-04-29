@@ -124,13 +124,14 @@ document.addEventListener('touchend', () => { dragging = null; });
 update();
 
 // === Slide 4: Radar Charts ===
-const radarLabels = ['Восхищение', 'Желанность', 'Свобода', 'Вовлечённость'];
+const radarLabels = ['В', 'Ж', 'С', 'ВЗ'];
 const radarData = {
     anya: [4, 9, 4, 8],
     natasha: [7, 9, 6, 6],
     ksenia: [8, 5, 6, 3],
     svetaBefore: [10, 8, 4, 9],
-    svetaAfter: [7, 6, 4, 3]
+    svetaAfter: [7, 6, 4, 3],
+    alina: [7, 7, 8, 5]
 };
 
 function drawRadar(canvasId, values, color) {
@@ -171,16 +172,15 @@ function drawRadar(canvasId, values, color) {
         ctx.stroke();
     }
 
-    ctx.font = '13px Segoe UI, system-ui, sans-serif';
-    ctx.fillStyle = '#5a3d7a';
+    ctx.font = 'bold 16px Segoe UI, system-ui, sans-serif';
+    ctx.fillStyle = '#3a2060';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
     for (let i = 0; i < n; i++) {
         const angle = (Math.PI * 2 / n) * i - Math.PI / 2;
-        const lx = cx + Math.cos(angle) * (r + 28);
-        const ly = cy + Math.sin(angle) * (r + 28);
-        if (i === 0) { ctx.textAlign = 'center'; ctx.fillText(radarLabels[i], lx, ly - 4); }
-        else if (i === 1) { ctx.textAlign = 'left'; ctx.fillText(radarLabels[i], lx + 4, ly + 5); }
-        else if (i === 2) { ctx.textAlign = 'center'; ctx.fillText(radarLabels[i], lx, ly + 16); }
-        else { ctx.textAlign = 'right'; ctx.fillText(radarLabels[i], lx - 4, ly + 5); }
+        const lx = cx + Math.cos(angle) * (r + 18);
+        const ly = cy + Math.sin(angle) * (r + 18);
+        ctx.fillText(radarLabels[i], lx, ly);
     }
 
     ctx.beginPath();
@@ -220,3 +220,4 @@ drawRadar('radarNatasha', radarData.natasha, '#22c55e');
 drawRadar('radarKsenia', radarData.ksenia, '#f59e0b');
 drawRadar('radarSvetaBefore', radarData.svetaBefore, '#ec4899');
 drawRadar('radarSvetaAfter', radarData.svetaAfter, '#64748b');
+drawRadar('radarAlina', radarData.alina, '#06b6d4');

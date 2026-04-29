@@ -566,7 +566,14 @@ html, body {
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 36px;
+    gap: 20px;
+}
+
+.s4-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .s4-title {
@@ -575,11 +582,23 @@ html, body {
     color: #3a2060;
 }
 
-.s4-cards {
+.s4-legend {
     display: flex;
-    gap: 24px;
-    justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.s4-legend-item {
+    font-size: 16px;
+    font-weight: 600;
+    color: #5a3d7a;
+}
+
+.s4-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
 .s4-card {
@@ -611,6 +630,18 @@ html, body {
 }
 
 .s4-radar {
+    margin-top: 8px;
+}
+
+.s4-card-unknown {
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    font-weight: 800;
+    color: rgba(124, 58, 237, 0.2);
     margin-top: 8px;
 }
 
