@@ -12,6 +12,43 @@ html, body {
     color: #2d2040;
 }
 
+/* === Rotate prompt for portrait mobile === */
+.rotate-prompt {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #2d1050;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    padding: 40px;
+}
+
+.rotate-prompt-icon {
+    font-size: 64px;
+    animation: rotate-hint 2s ease-in-out infinite;
+}
+
+@keyframes rotate-hint {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(90deg); }
+}
+
+@media (orientation: portrait) and (max-width: 900px) {
+    .rotate-prompt {
+        display: flex;
+    }
+    .stage, .nav-arrow, .progress-bar, .slide-tracker {
+        display: none;
+    }
+}
+
 /* === Stage & Slides === */
 .stage {
     position: fixed;
