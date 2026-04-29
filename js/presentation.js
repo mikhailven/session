@@ -142,7 +142,7 @@ function drawRadar(canvasId, values, color) {
     const h = canvas.height;
     const cx = w / 2;
     const cy = h / 2;
-    const r = Math.min(cx, cy) - 40;
+    const r = Math.min(cx, cy) - 30;
     const n = radarLabels.length;
 
     ctx.clearRect(0, 0, w, h);
@@ -172,14 +172,14 @@ function drawRadar(canvasId, values, color) {
         ctx.stroke();
     }
 
-    ctx.font = 'bold 16px Segoe UI, system-ui, sans-serif';
+    ctx.font = 'bold 13px Segoe UI, system-ui, sans-serif';
     ctx.fillStyle = '#3a2060';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     for (let i = 0; i < n; i++) {
         const angle = (Math.PI * 2 / n) * i - Math.PI / 2;
-        const lx = cx + Math.cos(angle) * (r + 18);
-        const ly = cy + Math.sin(angle) * (r + 18);
+        const lx = cx + Math.cos(angle) * (r + 16);
+        const ly = cy + Math.sin(angle) * (r + 16);
         ctx.fillText(radarLabels[i], lx, ly);
     }
 
@@ -200,7 +200,7 @@ function drawRadar(canvasId, values, color) {
     ctx.lineWidth = 3;
     ctx.stroke();
 
-    ctx.font = 'bold 16px Segoe UI, system-ui, sans-serif';
+    ctx.font = 'bold 12px Segoe UI, system-ui, sans-serif';
     for (let i = 0; i < n; i++) {
         const angle = (Math.PI * 2 / n) * i - Math.PI / 2;
         const val = values[i] / 10;

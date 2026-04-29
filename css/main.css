@@ -363,7 +363,7 @@ html, body {
     width: 100%;
     height: 100%;
     justify-content: center;
-    gap: 40px;
+    gap: 24px;
 }
 
 /* Header with title + keywords */
@@ -375,7 +375,7 @@ html, body {
 }
 
 .s2-title {
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 800;
     color: #3a2060;
     text-align: center;
@@ -389,12 +389,12 @@ html, body {
 }
 
 .s2-keyword {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 700;
     color: #7c3aed;
     background: rgba(124, 58, 237, 0.08);
-    padding: 10px 24px;
-    border-radius: 14px;
+    padding: 7px 18px;
+    border-radius: 12px;
     border: 1px solid rgba(124, 58, 237, 0.15);
 }
 
@@ -412,14 +412,14 @@ html, body {
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(124, 58, 237, 0.15);
     border-radius: 20px;
-    padding: 32px 28px;
+    padding: 20px 22px;
 }
 
 .s2-role-title {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 800;
     color: #5b21b6;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .s2-role-list {
@@ -430,11 +430,11 @@ html, body {
 }
 
 .s2-role-list li {
-    font-size: 21px;
+    font-size: 16px;
     font-weight: 500;
     color: #3a2060;
-    line-height: 1.5;
-    padding-left: 16px;
+    line-height: 1.4;
+    padding-left: 14px;
     position: relative;
 }
 
@@ -577,7 +577,7 @@ html, body {
 }
 
 .s4-title {
-    font-size: 38px;
+    font-size: 28px;
     font-weight: 800;
     color: #3a2060;
 }
@@ -597,7 +597,7 @@ html, body {
 
 .s4-row {
     display: flex;
-    gap: 20px;
+    gap: 14px;
     justify-content: center;
 }
 
@@ -606,27 +606,27 @@ html, body {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(124, 58, 237, 0.12);
-    border-radius: 24px;
-    padding: 20px 24px;
+    border-radius: 16px;
+    padding: 14px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 .s4-card-name {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 800;
     color: #3a2060;
 }
 
 .s4-card-role {
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 600;
     color: #7c3aed;
     background: rgba(124, 58, 237, 0.08);
-    padding: 4px 14px;
-    border-radius: 10px;
+    padding: 3px 10px;
+    border-radius: 8px;
 }
 
 .s4-radar {
@@ -634,15 +634,15 @@ html, body {
 }
 
 .s4-card-unknown {
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 800;
     color: rgba(124, 58, 237, 0.2);
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 /* ==========================================
