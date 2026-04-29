@@ -3,55 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PET Session</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-        }
-
-        .container {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-
-        .status {
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-        }
-    </style>
+    <title>Сессия</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div class="container">
-        <h1>PET Session</h1>
-        <p>GitHub Pages работает!</p>
-        <div class="status">
-            <p>Статичный сайт успешно развернут.</p>
+
+    <div class="stage">
+
+        <!-- SLIDE 1: Three parts / slider -->
+        <div class="slide" id="slide1">
+            <div class="slide1-layout">
+                <div class="s1-col s1-col-left">
+                    <div class="s1-pole-name">Исследователь</div>
+                    <ul class="s1-list">
+                        <li>Разных девушек, состояний</li>
+                        <li>Сексуальность, новизна</li>
+                        <li>Приключения, яркие истории</li>
+                        <li>Подтверждение: я желанный</li>
+                        <li>Разные картинки жизни</li>
+                    </ul>
+                </div>
+                <div class="s1-col s1-col-center">
+                    <div class="s1-axis" id="axisTrack">
+                        <div class="s1-axis-line"></div>
+                        <div class="s1-distance-bar" id="distanceBar"></div>
+                        <div class="s1-thumb s1-thumb-main" id="thumbMain"></div>
+                        <div class="s1-thumb s1-thumb-ctrl" id="thumbController"></div>
+                        <div class="s1-thumb-label s1-label-main" id="labelMain">Что я хочу</div>
+                        <div class="s1-thumb-label s1-label-ctrl" id="labelController">Что я говорю</div>
+                    </div>
+                    <div class="s1-ctrl-connector" id="controllerConnector"></div>
+                    <div class="s1-ctrl-box" id="controllerBox">
+                        <div class="s1-ctrl-title">Моральный контролёр</div>
+                        <div class="s1-ctrl-status" id="controllerStatus">Спокоен</div>
+                    </div>
+                    <div class="s1-tension">
+                        <span class="s1-tension-num" id="tensionPercent">0%</span>
+                        <span class="s1-tension-word">напряжение</span>
+                    </div>
+                </div>
+                <div class="s1-col s1-col-right">
+                    <div class="s1-pole-name">Строитель</div>
+                    <ul class="s1-list">
+                        <li>Семья, дети, близость</li>
+                        <li>Дом, смысл, долгий вклад</li>
+                        <li>Строю нечто настоящее</li>
+                        <li>Быть опорой</li>
+                    </ul>
+                </div>
+            </div>
         </div>
+
+        <!-- SLIDE 2: Feelings + Roles -->
+        <div class="slide" id="slide2">
+            <div class="slide2-layout">
+                <div class="s2-header">
+                    <div class="s2-title">Что я хочу чувствовать рядом с женщиной</div>
+                    <div class="s2-keywords">
+                        <span class="s2-keyword">Восхищение</span>
+                        <span class="s2-keyword">Желанность</span>
+                        <span class="s2-keyword">Свобода</span>
+                        <span class="s2-keyword">Вовлечённость и забота</span>
+                    </div>
+                </div>
+                <div class="s2-roles-row">
+                    <div class="s2-role">
+                        <div class="s2-role-title">Женщина как человек</div>
+                        <ul class="s2-role-list">
+                            <li>Как она живёт, что чувствует, как думает</li>
+                            <li>Что у неё происходит, какая она внутри</li>
+                            <li>Как с ней строить связь</li>
+                            <li>Человеческий интерес к ней самой</li>
+                        </ul>
+                    </div>
+                    <div class="s2-role">
+                        <div class="s2-role-title">Женщина как состояние</div>
+                        <ul class="s2-role-list">
+                            <li>Тянет не к человеку, а к переживанию, которое рядом с ней возможно</li>
+                            <li>Девушка становится дверью в состояние</li>
+                            <li>После получения состояния — уже не интересно, как у неё дела</li>
+                        </ul>
+                    </div>
+                    <div class="s2-role">
+                        <div class="s2-role-title">Женщина как картинка самоценности</div>
+                        <ul class="s2-role-list">
+                            <li>Красивая женщина выбрала меня</li>
+                            <li>Женщина с мужем выбрала меня</li>
+                            <li>Могу понравиться молодой девушке</li>
+                            <li>Могу быть рядом с эффектной женщиной</li>
+                            <li>Девушка как доказательство моей ценности</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Cycle -->
+        <div class="slide" id="slide3">
+            <div class="slide3-layout">
+                <div class="s3-title">Быстро включился — насытился — отдалился</div>
+                <div class="s3-cycle">
+                    <div class="s3-step s3-step-warm">
+                        <div class="s3-step-num">1</div>
+                        <div class="s3-step-text">Появляется девушка. Включает состояние, картинку или интерес</div>
+                    </div>
+                    <div class="s3-arrow"></div>
+                    <div class="s3-step s3-step-warm">
+                        <div class="s3-step-num">2</div>
+                        <div class="s3-step-text">Быстро вовлекаюсь. Искренне тёплый, активный, внимательный</div>
+                    </div>
+                    <div class="s3-arrow"></div>
+                    <div class="s3-step s3-step-warm">
+                        <div class="s3-step-num">3</div>
+                        <div class="s3-step-text">Проживаем состояние / опыт</div>
+                    </div>
+                    <div class="s3-arrow"></div>
+                    <div class="s3-step s3-step-cold">
+                        <div class="s3-step-num">4</div>
+                        <div class="s3-step-text">Интерес снижается. Раздражают нюансы. Желание падает</div>
+                    </div>
+                    <div class="s3-arrow"></div>
+                    <div class="s3-step s3-step-cold">
+                        <div class="s3-step-num">5</div>
+                        <div class="s3-step-text">Хочется новой картинки или нового состояния</div>
+                    </div>
+                    <div class="s3-arrow"></div>
+                    <div class="s3-step s3-step-guilt">
+                        <div class="s3-step-num">6</div>
+                        <div class="s3-step-text">Вина: я что, обманул?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Navigation arrows -->
+    <button class="nav-arrow nav-prev" id="prevBtn">&#8592;</button>
+    <button class="nav-arrow nav-next" id="nextBtn">&#8594;</button>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Slide tracker -->
+    <div class="slide-tracker">
+        <span class="tracker-current" id="trackerCurrent">1</span>
+        <span class="tracker-sep">/</span>
+        <span class="tracker-total" id="trackerTotal">2</span>
+    </div>
+
+    <script src="js/presentation.js"></script>
 </body>
 </html>
