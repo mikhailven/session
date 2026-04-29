@@ -49,6 +49,66 @@ html, body {
     }
 }
 
+@media (max-height: 600px) {
+    .slide {
+        padding: 20px 40px;
+    }
+
+    /* Slide 1 */
+    .s1-pole-name { font-size: 24px; }
+    .s1-list li { font-size: 16px; gap: 6px; }
+    .s1-list { gap: 6px; }
+    .s1-col-left, .s1-col-right { width: 200px; gap: 10px; }
+    .s1-axis { height: 100px; }
+    .s1-thumb { width: 40px; height: 40px; top: 10px; }
+    .s1-axis-line, .s1-distance-bar { top: 30px; }
+    .s1-thumb-label { top: 60px; font-size: 16px; padding: 4px 12px; }
+    .s1-ctrl-connector { height: 20px; }
+    .s1-ctrl-box { padding: 16px 32px; }
+    .s1-ctrl-title { font-size: 22px; }
+    .s1-ctrl-status { font-size: 18px; padding: 4px 18px; }
+    .s1-tension { margin-top: 12px; }
+    .s1-tension-num { font-size: 36px; }
+    .s1-tension-word { font-size: 16px; }
+
+    /* Slide 2 */
+    .s2-title { font-size: 28px; }
+    .s2-keyword { font-size: 20px; padding: 6px 16px; }
+    .s2-keywords { gap: 12px; }
+    .s2-header { gap: 12px; }
+    .slide2-layout { gap: 24px; }
+    .s2-role { padding: 20px 18px; }
+    .s2-role-title { font-size: 20px; margin-bottom: 10px; }
+    .s2-role-list li { font-size: 16px; gap: 8px; }
+
+    /* Slide 3 */
+    .s3-title { font-size: 28px; }
+    .s3-step { width: 140px; padding: 12px 10px; }
+    .s3-step-text { font-size: 14px; }
+    .s3-step-num { width: 28px; height: 28px; font-size: 14px; }
+    .slide3-layout { gap: 24px; }
+}
+
+@media (max-width: 1100px) and (orientation: landscape) {
+    .slide {
+        padding: 24px 40px;
+    }
+
+    .s1-col-left, .s1-col-right { width: 180px; }
+    .s1-pole-name { font-size: 26px; }
+    .s1-list li { font-size: 17px; }
+    .s1-col { gap: 12px; }
+
+    .s2-title { font-size: 30px; }
+    .s2-keyword { font-size: 20px; padding: 6px 16px; }
+    .s2-role { padding: 20px 18px; }
+    .s2-role-title { font-size: 20px; }
+    .s2-role-list li { font-size: 17px; }
+
+    .s3-step { width: 130px; padding: 12px 8px; }
+    .s3-step-text { font-size: 14px; }
+}
+
 /* === Stage & Slides === */
 .stage {
     position: fixed;
