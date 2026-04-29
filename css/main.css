@@ -40,35 +40,126 @@ html, body {
     50% { transform: rotate(90deg); }
 }
 
-@media (orientation: portrait) and (max-width: 900px) {
-    .rotate-prompt {
-        display: flex;
-    }
-    .stage, .nav-arrow, .progress-bar, .slide-tracker {
-        display: none !important;
-    }
-}
-
-@media (max-height: 500px) and (orientation: landscape) {
+/* === Mobile vertical === */
+@media (max-width: 900px) {
     .rotate-prompt {
         display: none !important;
     }
 
-    .stage {
-        transform: scale(0.55);
-        transform-origin: top left;
-        width: 182%;
-        height: 182%;
+    .slide {
+        padding: 24px 20px 80px;
+        overflow-y: auto;
+        align-items: flex-start;
     }
 
     .nav-arrow {
-        transform: translateY(-50%) scale(0.7);
+        top: auto;
+        bottom: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+        transform: none;
     }
 
-    .slide-tracker {
-        transform: scale(0.6);
-        transform-origin: bottom right;
+    .nav-arrow:hover {
+        transform: scale(1.05);
     }
+
+    .nav-prev { left: 20px; }
+    .nav-next { right: 20px; }
+
+    .slide-tracker {
+        bottom: 24px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .tracker-current { font-size: 32px; }
+    .tracker-sep { font-size: 20px; }
+    .tracker-total { font-size: 20px; }
+
+    .progress-bar { height: 4px; }
+
+    /* Slide 1 */
+    .slide1-layout {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .s1-col-left, .s1-col-right {
+        width: 100%;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .s1-col-center {
+        width: 100%;
+    }
+
+    .s1-pole-name { font-size: 28px; }
+    .s1-list { gap: 8px; }
+    .s1-list li { font-size: 18px; }
+
+    .s1-axis { height: 110px; }
+    .s1-thumb { width: 44px; height: 44px; }
+    .s1-thumb-label { font-size: 16px; padding: 4px 12px; }
+    .s1-ctrl-box { padding: 18px 28px; }
+    .s1-ctrl-title { font-size: 22px; }
+    .s1-ctrl-status { font-size: 18px; }
+    .s1-tension-num { font-size: 36px; }
+    .s1-tension-word { font-size: 16px; }
+
+    /* Slide 2 */
+    .slide2-layout { gap: 24px; }
+    .s2-title { font-size: 26px; }
+    .s2-keywords { gap: 10px; }
+    .s2-keyword { font-size: 18px; padding: 6px 14px; }
+
+    .s2-roles-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .s2-role { padding: 20px; }
+    .s2-role-title { font-size: 20px; margin-bottom: 10px; }
+    .s2-role-list li { font-size: 17px; }
+
+    /* Slide 3 */
+    .slide3-layout { gap: 24px; }
+    .s3-title { font-size: 26px; }
+
+    .s3-cycle {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .s3-step {
+        width: 100%;
+        max-width: 360px;
+        flex-direction: row;
+        text-align: left;
+        gap: 14px;
+        padding: 14px 18px;
+    }
+
+    .s3-step-text { font-size: 16px; }
+    .s3-step-num { width: 32px; height: 32px; min-width: 32px; font-size: 15px; }
+
+    .s3-arrow {
+        width: 3px;
+        height: 16px;
+    }
+
+    /* Slide 4 */
+    .slide4-layout { gap: 28px; }
+    .s4-title { font-size: 26px; }
+    .s4-question { padding: 20px; gap: 16px; }
+    .s4-num { width: 36px; height: 36px; min-width: 36px; font-size: 18px; }
+    .s4-text { font-size: 18px; }
 }
 
 /* === Stage & Slides === */
