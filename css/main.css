@@ -558,9 +558,66 @@ html, body {
 }
 
 /* ==========================================
-   SLIDE 4: Questions
+   SLIDE 4: Diagrams
    ========================================== */
 .slide4-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+
+.s4-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #3a2060;
+}
+
+.s4-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.s4-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(124, 58, 237, 0.12);
+    border-radius: 24px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.s4-card-name {
+    font-size: 24px;
+    font-weight: 800;
+    color: #3a2060;
+}
+
+.s4-card-role {
+    font-size: 18px;
+    font-weight: 600;
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.08);
+    padding: 4px 14px;
+    border-radius: 10px;
+}
+
+.s4-radar {
+    margin-top: 8px;
+}
+
+/* ==========================================
+   SLIDE 5: Questions
+   ========================================== */
+.slide5-layout {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -570,20 +627,20 @@ html, body {
     gap: 48px;
 }
 
-.s4-title {
+.s5-title {
     font-size: 38px;
     font-weight: 800;
     color: #3a2060;
 }
 
-.s4-questions {
+.s5-questions {
     display: flex;
     flex-direction: column;
     gap: 28px;
     width: 100%;
 }
 
-.s4-question {
+.s5-question {
     display: flex;
     align-items: flex-start;
     gap: 24px;
@@ -595,7 +652,7 @@ html, body {
     padding: 28px 32px;
 }
 
-.s4-num {
+.s5-num {
     width: 44px;
     height: 44px;
     min-width: 44px;
@@ -609,7 +666,7 @@ html, body {
     font-weight: 800;
 }
 
-.s4-text {
+.s5-text {
     font-size: 24px;
     font-weight: 600;
     color: #3a2060;

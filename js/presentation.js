@@ -127,7 +127,10 @@ update();
 const radarLabels = ['Восхищение', 'Желанность', 'Свобода', 'Вовлечённость'];
 const radarData = {
     anya: [4, 9, 4, 8],
-    natasha: [7, 9, 6, 6]
+    natasha: [7, 9, 6, 6],
+    ksenia: [8, 5, 6, 3],
+    svetaBefore: [10, 8, 4, 9],
+    svetaAfter: [7, 6, 4, 3]
 };
 
 function drawRadar(canvasId, values, color) {
@@ -214,3 +217,6 @@ function drawRadar(canvasId, values, color) {
 
 drawRadar('radarAnya', radarData.anya, '#7c3aed');
 drawRadar('radarNatasha', radarData.natasha, '#22c55e');
+drawRadar('radarKsenia', radarData.ksenia, '#f59e0b');
+drawRadar('radarSvetaBefore', radarData.svetaBefore, '#ec4899');
+drawRadar('radarSvetaAfter', radarData.svetaAfter, '#64748b');
